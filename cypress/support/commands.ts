@@ -11,6 +11,7 @@ import "@percy/cypress";
 // Import commands for third-party auth providers
 import "./auth-provider-commands/auth0";
 import "./auth-provider-commands/okta";
+import "@deploysentinel/cypress-debugger/support";
 
 // custom command to make taking snapshots with full name
 // formed from the test title + suffix easier

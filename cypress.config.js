@@ -8,6 +8,7 @@ import codeCoverageTask from "@cypress/code-coverage/task";
 import { defineConfig } from "cypress";
 import "@cypress/instrument-cra";
 const { devServer } = require("@cypress/react/plugins/react-scripts");
+const deploysentinel = require("@deploysentinel/cypress-debugger/plugin");
 
 dotenv.config({ path: ".env.local" });
 dotenv.config();
@@ -98,6 +99,8 @@ module.exports = defineConfig({
       });
 
       codeCoverageTask(on, config);
+
+      deploysentinel(on, config);
       return config;
     },
   },
